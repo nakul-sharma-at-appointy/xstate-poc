@@ -1,0 +1,94 @@
+.task-item-div {
+  border: 1px solid #cccccc;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-item-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+
+.task-item-sub-info {
+  display: flex;
+  max-width: max-content;
+  gap: 1.25rem;
+}
+
+.task-item-name:hover {
+  cursor: pointer;
+}
+
+.task-item-float-div {
+  max-width: max-content;
+  border: 1px solid black;
+  border-radius: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.task-item-action-div {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.task-item-action-div span {
+  font-size: 1.75rem;
+}
+
+.task-item-action-div p {
+  font-size: 0.75rem;
+}
+
+.delete-action {
+  color: red;
+}
+
+.edit-action {
+  color: var(--primary-color);
+}
+
+.task-item-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-item-action:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .task-item-sub-info {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .task-item-action-div {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .task-item-action p {
+    display: none;
+  }
+}
