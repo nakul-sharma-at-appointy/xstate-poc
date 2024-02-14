@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   const [state, send] = useMachine(todoMachine);
-  const handleShowModal = () => {send({type: "showModal"}); console.log(state.context.showModal)}
+  const handleShowModal = () => {send({type: "showModal"});}
 
 
   return (
