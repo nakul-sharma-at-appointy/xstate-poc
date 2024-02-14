@@ -9,12 +9,13 @@ import './App.css'
 function App() {
   const [state, send] = useMachine(todoMachine);
   const [showModal, setShowModal] = useState(false)
+  const handleShowModal = () => {send({type: "showModal"}); console.log(state.context.showModal)}
 
 
   return (
     <div>
       <Header />
-      <button type="button" onClick={() => setShowModal(true)} className="add-task-button">
+      <button type="button" onClick={handleShowModal} className="add-task-button">
             <p>Add a new task</p>  
           </button>
       <AddToDoModal state={state} send={send} showModal={showModal} setShowModal={setShowModal} />

@@ -5,6 +5,7 @@ function TaskItem({ task, send, setShowModal }) {
   const handleToggleTask = () => send({type: 'toggleTask', taskId: task.id });
   const handleDeleteTask = () => send({ type: 'deleteTask', taskId: task.id });
   const handleEditTask = () => send({ type: 'editTask', taskId: task.id });
+  const handleShowModal = () => send({type: 'showModal'})
 
   return (
 
@@ -25,7 +26,7 @@ function TaskItem({ task, send, setShowModal }) {
                             <p>Delete</p>
                         </div>
 
-                        <div className="task-item-action edit-action" onClick={() => {handleEditTask(); setShowModal(true)}} role="button" tabIndex="0">
+                        <div className="task-item-action edit-action" onClick={() => {handleEditTask(); handleShowModal()}} role="button" tabIndex="0">
                             <p>Edit</p>
                         </div>
 

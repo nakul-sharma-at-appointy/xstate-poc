@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Modal.css";
 
 function AddToDoModal({ state, send, showModal, setShowModal }) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(state.context.task.text ? state.context?.task?.text : '');
 
   const handleAddTask = (text) => {
     if (text.length === 0) return;
-    if (!taskToBeEdited) send({ type: "addTask", text });
+    if (!taskToBeEdited) send({ type: "addTask", text }, send ({type: "hideModal"}));
     else {
-      send({ type: "updateTask", taskToBeEdited: { ...taskToBeEdited, text } });
+      send({ type: "updateTask", taskToBeEdited: { ...taskToBeEdited, text } }, send ({type: "hideModal"}));
     }
   };
   const handleText = (text) => {
@@ -18,6 +18,10 @@ function AddToDoModal({ state, send, showModal, setShowModal }) {
     (taskInList) => taskInList?.id === state.context.task?.id
   );
 
+  const handleModalHide = () => {
+    send ({type: "hideModal"})
+  }
+
   useEffect(() => {
     if (taskToBeEdited) {
       setText(taskToBeEdited.text);
@@ -25,21 +29,7 @@ function AddToDoModal({ state, send, showModal, setShowModal }) {
   }, [taskToBeEdited]);
 
   return (
-    // <div>
-    //   <div className="modal-header">
-    //     {taskToBeEdited ? <p>Edit this task</p> : <p>Add a Task</p>}
-    //   </div>
-    //   <h1>ToDo List</h1>
-
-    //   <input
-    //     type="text"
-    //     placeholder="Add a task..."
-    //     onChange={(e) => handleText(e.target.value)}
-    //     value={text}
-    //   />
-    //   <button onClick={() => handleAddTask(text)}>Submit</button>
-    // </div>
-    showModal && <div className="modal-bg">
+    state.context.showModal && <div className="modal-bg">
       <div className="modal-centered">
         <div className="modal">
           <div className="modal-header">
@@ -68,7 +58,7 @@ function AddToDoModal({ state, send, showModal, setShowModal }) {
               <button
                 type="button"
                 className="add-button"
-                onClick={() =>{ handleAddTask(text);  setShowModal(false); setText('')}}
+                onClick={() =>{ handleAddTask(text); setText('')}}
               >
                 Update Task
               </button>
@@ -76,13 +66,13 @@ function AddToDoModal({ state, send, showModal, setShowModal }) {
               <button
                 type="button"
                 className="add-button"
-                onClick={() => {handleAddTask(text); setShowModal(false); setText('')}}
+                onClick={() => {handleAddTask(text); setText('')}}
               >
                 Add Task
               </button>
             )}
 
-            <button type="button" className="cancel-button" onClick={() => setShowModal(false)}>
+            <button type="button" className="cancel-button" onClick={() =>{ handleModalHide(); setText('')}}>
               Cancel
             </button>
           </div>
