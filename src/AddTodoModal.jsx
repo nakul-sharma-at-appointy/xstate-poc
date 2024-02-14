@@ -6,7 +6,7 @@ function AddToDoModal({ state, send}) {
 
   const handleAddTask = (text) => {
     if (text.length === 0) return;
-    if (!taskToBeEdited) send({ type: "addTask", text }, send ({type: "hideModal"}));
+    if (!taskToBeEdited) send({ type: "addTask", text }, send({type: "hideModal"}));
     else {
       send({ type: "updateTask", taskToBeEdited: { ...taskToBeEdited, text } }, send ({type: "hideModal"}));
     }
