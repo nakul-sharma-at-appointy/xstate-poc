@@ -1,7 +1,7 @@
 import React from 'react';
 import './TaskItem.css'
 
-function TaskItem({ task, send, setShowModal }) {
+function TaskItem({ task, send }) {
   const handleToggleTask = () => send({type: 'toggleTask', taskId: task.id });
   const handleDeleteTask = () => send({ type: 'deleteTask', taskId: task.id });
   const handleEditTask = () => send({ type: 'editTask', taskId: task.id });

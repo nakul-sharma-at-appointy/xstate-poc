@@ -1,7 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, send, showModal, setShowModal }) {
+function TaskList({ tasks, send }) {
   return (
     <>
       {tasks?.length !== 0 ? (
@@ -11,7 +11,6 @@ function TaskList({ tasks, send, showModal, setShowModal }) {
               key={task.id}
               task={task}
               send={send}
-              setShowModal={setShowModal}
             />
           ))}
         </ul>

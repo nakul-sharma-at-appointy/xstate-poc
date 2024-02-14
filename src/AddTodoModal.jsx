@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Modal.css";
 
-function AddToDoModal({ state, send, showModal, setShowModal }) {
-  const [text, setText] = useState(state.context.task.text ? state.context?.task?.text : '');
+function AddToDoModal({ state, send}) {
+  const [text, setText] = useState('');
 
   const handleAddTask = (text) => {
     if (text.length === 0) return;
