@@ -38,8 +38,9 @@ const todoMachine = createMachine({
             target: 'edit',
             actions: assign({
                 tasks: ({context, event}) => context.tasks.map((task) => task.id === event.taskId ? { ...task, isEdit: !task.isEdit } : task),
-                task: ({context, event}) => context.tasks.find((task) =>
-                  task.id === event.taskId),
+                task: ({context, event}) => { console.log(context.tasks.find((task) =>
+                  task.id === event.taskId)); return context.tasks.find((task) =>
+                  task.id === event.taskId);}
             })
           },
           toggleTask: {
@@ -64,24 +65,19 @@ const todoMachine = createMachine({
                 showModal: ({context}) =>  context.showModal = false
             })
           },
-        //   updateTask: {
-        //     target: 'active',
-        //     actions: assign({
-        //         tasks: ({context, event}) => context.tasks.map((taskInList) => {
-        //             if (taskInList.id === event.taskToBeEdited?.id) {
-        //                 return {...event.taskToBeEdited};
-        //             }
-        //             else {
-        //                 return taskInList;
-        //             }
-        //         }),
-        //       task: () => {}
-        //     })
-        // }
         },
       },
       edit: {
         on: {
+          editTask: {
+            target: 'edit',
+            actions: assign({
+                tasks: ({context, event}) => context.tasks.map((task) => task.id === event.taskId ? { ...task, isEdit: !task.isEdit } : task),
+                task: ({context, event}) => { console.log(context.tasks.find((task) =>
+                  task.id === event.taskId)); return context.tasks.find((task) =>
+                  task.id === event.taskId);}
+            })
+          },
             updateTask: {
                 target: 'active',
                 actions: assign({
