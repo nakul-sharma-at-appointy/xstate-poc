@@ -1,9 +1,9 @@
 import React from "react";
 import { useMachine } from "@xstate/react";
 import todoMachine from "./todoMachine";
-import TaskList from "./taskList";
+import TaskList from "./Components/TaskList/taskList";
 import AddToDoModal from "./AddTodoModal";
-import Header from "./Header";
+import Header from "./Components/Header/Header";
 import './App.css'
 
 function App() {
