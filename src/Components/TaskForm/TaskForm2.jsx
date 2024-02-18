@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Modal.css";
+import "./TaskForm2.css";
 
-function AddToDoModal({ state, send}) {
+function TaskForm2({ state, send}) {
   const [text, setText] = useState('');
 
   const handleAddTask = (text) => {
@@ -29,8 +29,9 @@ function AddToDoModal({ state, send}) {
   }, [taskToBeEdited]);
 
   return (
-    state.context.showModal && <div className="modal-bg">
-      <div className="modal-centered">
+    state.context.showModal && 
+<div className="task-form">
+      <div className="task-input-container">
         <div className="modal">
           <div className="modal-header">
             {taskToBeEdited ? <p>Edit this task</p> : <p>Add a Task</p>}
@@ -82,4 +83,4 @@ function AddToDoModal({ state, send}) {
   );
 }
 
-export default AddToDoModal;
+export default TaskForm2;

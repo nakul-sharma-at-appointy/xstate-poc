@@ -1,0 +1,23 @@
+/* TaskList.css */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.empty-tasklist-message-div-2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.empty-tasklist-message-div-2 h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  /* color: blanchedalmond; */
+}
+
+.empty-tasklist-message-div-2 p {
+  font-size: 16px;
+  color: #777777;
+}

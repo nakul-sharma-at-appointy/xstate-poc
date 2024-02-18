@@ -1,7 +1,8 @@
 import React from "react";
-import TaskItem from "../TaskItem/TaskItem";
+import TaskItem2 from "../TaskItem/TaskItem2";
+import './TaskList2.css'
 
-function TaskList({ tasks, send }) {
+function TaskList2({ tasks, send }) {
 
   const actions = ['delete', 'edit']
 
@@ -10,7 +11,7 @@ function TaskList({ tasks, send }) {
       {tasks?.length !== 0 ? (
         <ul>
           {tasks.map((task) => (
-            <TaskItem
+            <TaskItem2
               key={task.id}
               task={task}
               send={send}
@@ -19,13 +20,14 @@ function TaskList({ tasks, send }) {
           ))}
         </ul>
       ) : (
-        <div className="flex-column-center empty-tasklist-message-div">
-          <h1>No tasks yet</h1>
+        <div className="flex-column-center empty-tasklist-message-div-2">
+          <h1 className="empty-message-2">No tasks yet</h1>
           <p>Tasks you add will appear here</p>
         </div>
+
       )}
     </>
   );
 }
 
-export default TaskList;
+export default TaskList2;

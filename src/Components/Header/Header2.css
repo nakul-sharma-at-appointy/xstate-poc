@@ -1,0 +1,22 @@
+/* Header2.css */
+
+.header-2 {
+  background-color: #d8f4ed;
+  color: blue;
+  padding: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header-logo img {
+  max-width: 50px;
+  margin-right: 10px;
+}

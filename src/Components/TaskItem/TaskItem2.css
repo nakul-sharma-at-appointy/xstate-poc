@@ -1,0 +1,57 @@
+.task2-item-div {
+  /* Base styles for the entire task item container */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.task2-item-main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item-name {
+  margin: 0;
+  font-size: 16px;
+}
+
+.done-task2-item-name {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task2-item-action-div {
+  display: flex;
+}
+
+.task2-item-action {
+  /* Base styles for individual action buttons */
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.task2-item-action:hover {
+  background-color: #eee;
+}
+
+.delete-action-2 {
+  /* Specific styles for delete button */
+  background-color: #f57c7c;
+  color: #fff;
+}
+
+.edit-action-2 {
+  /* Specific styles for edit button */
+  background-color: #29b6f6;
+  color: #fff;
+}
+
+/* You can add specific styles for other actions by defining classes like above */
