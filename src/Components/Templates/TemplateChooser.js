@@ -1,6 +1,5 @@
 import React from "react";
-// import Template1 from './Template1';
-// import Template2 from './Template2';
+
 import { useMachine } from "@xstate/react";
 import todoMachine from "../../todoMachine";
 import TemplatesConfig from "./templateconfig";
